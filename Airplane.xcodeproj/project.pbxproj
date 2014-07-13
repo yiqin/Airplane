@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D7E93001972F446006A19E0 /* YQMainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E92FF1972F446006A19E0 /* YQMainScene.swift */; };
+		8D7E93021972F4C2006A19E0 /* YQGameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E93011972F4C2006A19E0 /* YQGameData.swift */; };
+		8D7E93041972F509006A19E0 /* YQResultScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E93031972F509006A19E0 /* YQResultScene.swift */; };
+		8D7E93061972F553006A19E0 /* YQPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E93051972F553006A19E0 /* YQPlane.swift */; };
 		8DB369281972E180001DAF73 /* YQAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB369271972E180001DAF73 /* YQAppDelegate.swift */; };
 		8DB3692B1972E180001DAF73 /* Airplane.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DB369291972E180001DAF73 /* Airplane.xcdatamodeld */; };
 		8DB3692D1972E180001DAF73 /* YQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3692C1972E180001DAF73 /* YQViewController.swift */; };
@@ -50,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D7E92FF1972F446006A19E0 /* YQMainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQMainScene.swift; sourceTree = "<group>"; };
+		8D7E93011972F4C2006A19E0 /* YQGameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQGameData.swift; sourceTree = "<group>"; };
+		8D7E93031972F509006A19E0 /* YQResultScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQResultScene.swift; sourceTree = "<group>"; };
+		8D7E93051972F553006A19E0 /* YQPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQPlane.swift; sourceTree = "<group>"; };
 		8DB369221972E180001DAF73 /* Airplane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airplane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB369261972E180001DAF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DB369271972E180001DAF73 /* YQAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YQAppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +135,10 @@
 			children = (
 				8DB369271972E180001DAF73 /* YQAppDelegate.swift */,
 				8DB3692C1972E180001DAF73 /* YQViewController.swift */,
+				8D7E92FF1972F446006A19E0 /* YQMainScene.swift */,
+				8D7E93011972F4C2006A19E0 /* YQGameData.swift */,
+				8D7E93031972F509006A19E0 /* YQResultScene.swift */,
+				8D7E93051972F553006A19E0 /* YQPlane.swift */,
 				8DB3692E1972E180001DAF73 /* Main.storyboard */,
 				8DB369311972E180001DAF73 /* Images.xcassets */,
 				8DB369291972E180001DAF73 /* Airplane.xcdatamodeld */,
@@ -332,6 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DB3692D1972E180001DAF73 /* YQViewController.swift in Sources */,
+				8D7E93041972F509006A19E0 /* YQResultScene.swift in Sources */,
+				8D7E93021972F4C2006A19E0 /* YQGameData.swift in Sources */,
+				8D7E93001972F446006A19E0 /* YQMainScene.swift in Sources */,
+				8D7E93061972F553006A19E0 /* YQPlane.swift in Sources */,
 				8DB369281972E180001DAF73 /* YQAppDelegate.swift in Sources */,
 				8DB3692B1972E180001DAF73 /* Airplane.xcdatamodeld in Sources */,
 			);
