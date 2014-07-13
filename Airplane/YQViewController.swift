@@ -15,7 +15,8 @@ class YQViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var skView = SKView()
+        // something wrong
+        let skView = self.view as SKView
         
     }
     
