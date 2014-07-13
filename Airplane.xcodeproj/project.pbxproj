@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8DB369281972E180001DAF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB369271972E180001DAF73 /* AppDelegate.swift */; };
+		8DB369281972E180001DAF73 /* YQAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB369271972E180001DAF73 /* YQAppDelegate.swift */; };
 		8DB3692B1972E180001DAF73 /* Airplane.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DB369291972E180001DAF73 /* Airplane.xcdatamodeld */; };
-		8DB3692D1972E180001DAF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3692C1972E180001DAF73 /* ViewController.swift */; };
+		8DB3692D1972E180001DAF73 /* YQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3692C1972E180001DAF73 /* YQViewController.swift */; };
 		8DB369301972E180001DAF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3692E1972E180001DAF73 /* Main.storyboard */; };
 		8DB369321972E180001DAF73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369311972E180001DAF73 /* Images.xcassets */; };
 		8DB3693E1972E181001DAF73 /* AirplaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3693D1972E181001DAF73 /* AirplaneTests.swift */; };
@@ -28,9 +28,9 @@
 /* Begin PBXFileReference section */
 		8DB369221972E180001DAF73 /* Airplane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airplane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB369261972E180001DAF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8DB369271972E180001DAF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8DB369271972E180001DAF73 /* YQAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YQAppDelegate.swift; sourceTree = "<group>"; };
 		8DB3692A1972E180001DAF73 /* Airplane.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Airplane.xcdatamodel; sourceTree = "<group>"; };
-		8DB3692C1972E180001DAF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8DB3692C1972E180001DAF73 /* YQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YQViewController.swift; sourceTree = "<group>"; };
 		8DB3692F1972E180001DAF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DB369311972E180001DAF73 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8DB369371972E180001DAF73 /* AirplaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirplaneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,8 +77,8 @@
 		8DB369241972E180001DAF73 /* Airplane */ = {
 			isa = PBXGroup;
 			children = (
-				8DB369271972E180001DAF73 /* AppDelegate.swift */,
-				8DB3692C1972E180001DAF73 /* ViewController.swift */,
+				8DB369271972E180001DAF73 /* YQAppDelegate.swift */,
+				8DB3692C1972E180001DAF73 /* YQViewController.swift */,
 				8DB3692E1972E180001DAF73 /* Main.storyboard */,
 				8DB369311972E180001DAF73 /* Images.xcassets */,
 				8DB369291972E180001DAF73 /* Airplane.xcdatamodeld */,
@@ -211,8 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DB3692D1972E180001DAF73 /* ViewController.swift in Sources */,
-				8DB369281972E180001DAF73 /* AppDelegate.swift in Sources */,
+				8DB3692D1972E180001DAF73 /* YQViewController.swift in Sources */,
+				8DB369281972E180001DAF73 /* YQAppDelegate.swift in Sources */,
 				8DB3692B1972E180001DAF73 /* Airplane.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

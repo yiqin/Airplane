@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  YQViewController.swift
 //  Airplane
 //
 //  Created by yiqin on 7/13/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class YQViewController: UIViewController {
                             
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  YQAppDelegate.swift
 //  Airplane
 //
 //  Created by yiqin on 7/13/14.
@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class YQAppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
 
