@@ -13,6 +13,30 @@
 		8DB369301972E180001DAF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3692E1972E180001DAF73 /* Main.storyboard */; };
 		8DB369321972E180001DAF73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369311972E180001DAF73 /* Images.xcassets */; };
 		8DB3693E1972E181001DAF73 /* AirplaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3693D1972E181001DAF73 /* AirplaneTests.swift */; };
+		8DB369621972E497001DAF73 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369491972E497001DAF73 /* bg.png */; };
+		8DB369631972E497001DAF73 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3694A1972E497001DAF73 /* bg@2x.png */; };
+		8DB369641972E497001DAF73 /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3694B1972E497001DAF73 /* bullet.png */; };
+		8DB369651972E497001DAF73 /* bullet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3694C1972E497001DAF73 /* bullet@2x.png */; };
+		8DB369661972E497001DAF73 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3694D1972E497001DAF73 /* cloud.png */; };
+		8DB369671972E497001DAF73 /* cloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3694E1972E497001DAF73 /* cloud@2x.png */; };
+		8DB369681972E497001DAF73 /* enemyplane1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3694F1972E497001DAF73 /* enemyplane1.png */; };
+		8DB369691972E497001DAF73 /* enemyplane1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369501972E497001DAF73 /* enemyplane1@2x.png */; };
+		8DB3696A1972E497001DAF73 /* enemyplane2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369511972E497001DAF73 /* enemyplane2.png */; };
+		8DB3696B1972E497001DAF73 /* enemyplane2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369521972E497001DAF73 /* enemyplane2@2x.png */; };
+		8DB3696C1972E497001DAF73 /* enemypropeller1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369531972E497001DAF73 /* enemypropeller1.png */; };
+		8DB3696D1972E497001DAF73 /* enemypropeller1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369541972E497001DAF73 /* enemypropeller1@2x.png */; };
+		8DB3696E1972E497001DAF73 /* enemypropeller2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369551972E497001DAF73 /* enemypropeller2.png */; };
+		8DB3696F1972E497001DAF73 /* enemypropeller2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369561972E497001DAF73 /* enemypropeller2@2x.png */; };
+		8DB369701972E497001DAF73 /* myplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369571972E497001DAF73 /* myplane.png */; };
+		8DB369711972E497001DAF73 /* myplane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369581972E497001DAF73 /* myplane@2x.png */; };
+		8DB369721972E497001DAF73 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369591972E497001DAF73 /* pause.png */; };
+		8DB369731972E497001DAF73 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3695A1972E497001DAF73 /* pause@2x.png */; };
+		8DB369741972E497001DAF73 /* propeller1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3695B1972E497001DAF73 /* propeller1.png */; };
+		8DB369751972E497001DAF73 /* propeller1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3695C1972E497001DAF73 /* propeller1@2x.png */; };
+		8DB369761972E497001DAF73 /* propeller2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3695D1972E497001DAF73 /* propeller2.png */; };
+		8DB369771972E497001DAF73 /* propeller2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3695E1972E497001DAF73 /* propeller2@2x.png */; };
+		8DB369781972E497001DAF73 /* bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369601972E497001DAF73 /* bomb.png */; };
+		8DB369791972E497001DAF73 /* bombParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369611972E497001DAF73 /* bombParticle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +60,30 @@
 		8DB369371972E180001DAF73 /* AirplaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirplaneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB3693C1972E181001DAF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DB3693D1972E181001DAF73 /* AirplaneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneTests.swift; sourceTree = "<group>"; };
+		8DB369491972E497001DAF73 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		8DB3694A1972E497001DAF73 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		8DB3694B1972E497001DAF73 /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
+		8DB3694C1972E497001DAF73 /* bullet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bullet@2x.png"; sourceTree = "<group>"; };
+		8DB3694D1972E497001DAF73 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
+		8DB3694E1972E497001DAF73 /* cloud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud@2x.png"; sourceTree = "<group>"; };
+		8DB3694F1972E497001DAF73 /* enemyplane1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyplane1.png; sourceTree = "<group>"; };
+		8DB369501972E497001DAF73 /* enemyplane1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enemyplane1@2x.png"; sourceTree = "<group>"; };
+		8DB369511972E497001DAF73 /* enemyplane2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyplane2.png; sourceTree = "<group>"; };
+		8DB369521972E497001DAF73 /* enemyplane2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enemyplane2@2x.png"; sourceTree = "<group>"; };
+		8DB369531972E497001DAF73 /* enemypropeller1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemypropeller1.png; sourceTree = "<group>"; };
+		8DB369541972E497001DAF73 /* enemypropeller1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enemypropeller1@2x.png"; sourceTree = "<group>"; };
+		8DB369551972E497001DAF73 /* enemypropeller2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemypropeller2.png; sourceTree = "<group>"; };
+		8DB369561972E497001DAF73 /* enemypropeller2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enemypropeller2@2x.png"; sourceTree = "<group>"; };
+		8DB369571972E497001DAF73 /* myplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myplane.png; sourceTree = "<group>"; };
+		8DB369581972E497001DAF73 /* myplane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myplane@2x.png"; sourceTree = "<group>"; };
+		8DB369591972E497001DAF73 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		8DB3695A1972E497001DAF73 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		8DB3695B1972E497001DAF73 /* propeller1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = propeller1.png; sourceTree = "<group>"; };
+		8DB3695C1972E497001DAF73 /* propeller1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "propeller1@2x.png"; sourceTree = "<group>"; };
+		8DB3695D1972E497001DAF73 /* propeller2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = propeller2.png; sourceTree = "<group>"; };
+		8DB3695E1972E497001DAF73 /* propeller2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "propeller2@2x.png"; sourceTree = "<group>"; };
+		8DB369601972E497001DAF73 /* bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bomb.png; sourceTree = "<group>"; };
+		8DB369611972E497001DAF73 /* bombParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bombParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +130,7 @@
 				8DB3692E1972E180001DAF73 /* Main.storyboard */,
 				8DB369311972E180001DAF73 /* Images.xcassets */,
 				8DB369291972E180001DAF73 /* Airplane.xcdatamodeld */,
+				8DB369471972E497001DAF73 /* Resources */,
 				8DB369251972E180001DAF73 /* Supporting Files */,
 			);
 			path = Airplane;
@@ -110,6 +159,53 @@
 				8DB3693C1972E181001DAF73 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8DB369471972E497001DAF73 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DB369481972E497001DAF73 /* Images */,
+				8DB3695F1972E497001DAF73 /* Particles */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8DB369481972E497001DAF73 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8DB369491972E497001DAF73 /* bg.png */,
+				8DB3694A1972E497001DAF73 /* bg@2x.png */,
+				8DB3694B1972E497001DAF73 /* bullet.png */,
+				8DB3694C1972E497001DAF73 /* bullet@2x.png */,
+				8DB3694D1972E497001DAF73 /* cloud.png */,
+				8DB3694E1972E497001DAF73 /* cloud@2x.png */,
+				8DB3694F1972E497001DAF73 /* enemyplane1.png */,
+				8DB369501972E497001DAF73 /* enemyplane1@2x.png */,
+				8DB369511972E497001DAF73 /* enemyplane2.png */,
+				8DB369521972E497001DAF73 /* enemyplane2@2x.png */,
+				8DB369531972E497001DAF73 /* enemypropeller1.png */,
+				8DB369541972E497001DAF73 /* enemypropeller1@2x.png */,
+				8DB369551972E497001DAF73 /* enemypropeller2.png */,
+				8DB369561972E497001DAF73 /* enemypropeller2@2x.png */,
+				8DB369571972E497001DAF73 /* myplane.png */,
+				8DB369581972E497001DAF73 /* myplane@2x.png */,
+				8DB369591972E497001DAF73 /* pause.png */,
+				8DB3695A1972E497001DAF73 /* pause@2x.png */,
+				8DB3695B1972E497001DAF73 /* propeller1.png */,
+				8DB3695C1972E497001DAF73 /* propeller1@2x.png */,
+				8DB3695D1972E497001DAF73 /* propeller2.png */,
+				8DB3695E1972E497001DAF73 /* propeller2@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		8DB3695F1972E497001DAF73 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				8DB369601972E497001DAF73 /* bomb.png */,
+				8DB369611972E497001DAF73 /* bombParticle.sks */,
+			);
+			path = Particles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,8 +288,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB369761972E497001DAF73 /* propeller2.png in Resources */,
+				8DB369791972E497001DAF73 /* bombParticle.sks in Resources */,
+				8DB369671972E497001DAF73 /* cloud@2x.png in Resources */,
+				8DB3696A1972E497001DAF73 /* enemyplane2.png in Resources */,
+				8DB369651972E497001DAF73 /* bullet@2x.png in Resources */,
 				8DB369301972E180001DAF73 /* Main.storyboard in Resources */,
+				8DB369771972E497001DAF73 /* propeller2@2x.png in Resources */,
+				8DB369781972E497001DAF73 /* bomb.png in Resources */,
+				8DB369741972E497001DAF73 /* propeller1.png in Resources */,
+				8DB369661972E497001DAF73 /* cloud.png in Resources */,
 				8DB369321972E180001DAF73 /* Images.xcassets in Resources */,
+				8DB3696E1972E497001DAF73 /* enemypropeller2.png in Resources */,
+				8DB369751972E497001DAF73 /* propeller1@2x.png in Resources */,
+				8DB369731972E497001DAF73 /* pause@2x.png in Resources */,
+				8DB369641972E497001DAF73 /* bullet.png in Resources */,
+				8DB3696F1972E497001DAF73 /* enemypropeller2@2x.png in Resources */,
+				8DB3696B1972E497001DAF73 /* enemyplane2@2x.png in Resources */,
+				8DB3696C1972E497001DAF73 /* enemypropeller1.png in Resources */,
+				8DB369711972E497001DAF73 /* myplane@2x.png in Resources */,
+				8DB369701972E497001DAF73 /* myplane.png in Resources */,
+				8DB369721972E497001DAF73 /* pause.png in Resources */,
+				8DB369621972E497001DAF73 /* bg.png in Resources */,
+				8DB369631972E497001DAF73 /* bg@2x.png in Resources */,
+				8DB3696D1972E497001DAF73 /* enemypropeller1@2x.png in Resources */,
+				8DB369691972E497001DAF73 /* enemyplane1@2x.png in Resources */,
+				8DB369681972E497001DAF73 /* enemyplane1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +521,7 @@
 				8DB369431972E181001DAF73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DB369441972E181001DAF73 /* Build configuration list for PBXNativeTarget "AirplaneTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +530,7 @@
 				8DB369461972E181001DAF73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
