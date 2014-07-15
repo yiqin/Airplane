@@ -11,7 +11,7 @@ import SpriteKit
 
 class YQMainScene: SKScene, SKPhysicsContactDelegate {
     
-    let kBgImageHeight = 600
+    let kBgImageHeight = 600.0
     let kBgSpeed = 10
     let kScorePerPlane = 100
     
@@ -26,6 +26,22 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
     let kBulletMask = 3
     
     
+    var timer = NSTimer()
+    
+    var bg1 = SKSpriteNode()
+    var bg2 = SKSpriteNode()
+    
+    var myPlaneNode = SKNode()
+    var pauseButton = UIButton()
+    
+    var bullet = SKSpriteNode()
+    var bulletSpeed = Float()
+    
+    var scoreLabel = SKLabelNode()
+    var score = Int()
+    var playTimeLabel = SKLabelNode()
+    var playTime = Int()
+    
     
     init(size: CGSize) {
         super.init(size: size)
@@ -35,5 +51,25 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
     func startGame() {
         self.removeAllActions()
         self.removeAllChildren()
+        
+        self.physicsWorld.gravity = CGVectorMake(0, 0)
+        self.physicsWorld.contactDelegate = self;
+        
+        self.score = 0
+        self.playTime = 0
+        self.bulletSpeed = 0.5
+        
+        self.bg1 = SKSpriteNode(imageNamed:"bg")
+        self.bg2 = SKSpriteNode(imageNamed: "bg")
+        
+        
+        self.bg1.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat((kBgImageHeight)/Double(2.0)))
+        self.bg2.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat(kBgImageHeight*0.5+kBgImageHeight))
+        
+        
+        
     }
+    
+    
+    
 }
