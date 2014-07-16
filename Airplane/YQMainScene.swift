@@ -79,6 +79,7 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         
         
         // not sure whether myPlaneNode init or not
+        // yes
         self.myPlaneNode.addChild(myPlane)
         self.myPlaneNode.addChild(myPropeller)
         self.myPlaneNode.position = CGPointMake(CGRectGetMidX(self.frame), 100)
@@ -100,22 +101,22 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         self.playTimeLabel.fontSize = 20
         self.playTimeLabel.fontColor = UIColor.blackColor()
         
-        self.runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction])), withKey: <#String?#>)
+        self.runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.waitForDuration(0.3),SKAction.runBlock(self.shoot)])), withKey: "shootAction")
         
+        // No selector anymore
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0/100.0, target: self, selector: Selector("mainloop"), userInfo: nil, repeats: true)
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    }
+    
+    func mainloop() {
         
         
     }
     
+    func shoot() {
+        
+        
+    }
     
     
 }
