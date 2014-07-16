@@ -65,6 +65,53 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         self.background1.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat((kBgImageHeight)/Double(2.0)))
         self.background2.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat(kBgImageHeight*0.5+kBgImageHeight))
         
+        self.addChild(self.background1)
+        self.addChild(self.background2)
+        
+        let myPlane = SKSpriteNode(imageNamed: "myplane")
+        let myPropeller = SKSpriteNode(imageNamed: "propeller1")
+        let propeller1 = SKTexture(imageNamed: "propeller1")
+        let propeller2 = SKTexture(imageNamed: "propeller2")
+        let rotateAction = SKAction.animateWithTextures([propeller1,propeller2], timePerFrame: 0.01)
+        let rotateForever = SKAction.repeatActionForever(rotateAction)
+        myPropeller.runAction(rotateForever)
+        myPropeller.position = CGPointMake(-1, myPlane.size.height/2-2)
+        
+        
+        // not sure whether myPlaneNode init or not
+        self.myPlaneNode.addChild(myPlane)
+        self.myPlaneNode.addChild(myPropeller)
+        self.myPlaneNode.position = CGPointMake(CGRectGetMidX(self.frame), 100)
+        self.myPlaneNode.zPosition = 10
+        self.myPlaneNode.physicsBody = SKPhysicsBody(rectangleOfSize: myPlane.size)
+        self.myPlaneNode.physicsBody.allowsRotation = false
+        self.myPlaneNode.physicsBody.categoryBitMask = UInt32(self.kMyPlaneMask)
+        self.myPlaneNode.physicsBody.contactTestBitMask = UInt32(self.kEnemyPlaneMask)
+        self.myPlaneNode.physicsBody.collisionBitMask = UInt32(self.kEnemyPlaneMask)
+        self.addChild(self.myPlaneNode)
+        
+        // same problem
+        self.scoreLabel.fontName = "AmericanTypewriter-Bold"
+        self.scoreLabel.fontSize = 20
+        self.scoreLabel.fontColor = UIColor.blackColor()
+        self.addChild(self.scoreLabel)
+        
+        self.playTimeLabel.fontName = "AmericanTypewriter-Bold"
+        self.playTimeLabel.fontSize = 20
+        self.playTimeLabel.fontColor = UIColor.blackColor()
+        
+        self.runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction])), withKey: <#String?#>)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
     }
