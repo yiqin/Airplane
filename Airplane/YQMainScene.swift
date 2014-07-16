@@ -28,8 +28,8 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
     
     var timer = NSTimer()
     
-    var bg1 = SKSpriteNode()
-    var bg2 = SKSpriteNode()
+    var background1 = SKSpriteNode()
+    var background2 = SKSpriteNode()
     
     var myPlaneNode = SKNode()
     var pauseButton = UIButton()
@@ -59,12 +59,11 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         self.playTime = 0
         self.bulletSpeed = 0.5
         
-        self.bg1 = SKSpriteNode(imageNamed:"bg")
-        self.bg2 = SKSpriteNode(imageNamed: "bg")
+        self.background1 = SKSpriteNode(imageNamed:"background")
+        self.background2 = SKSpriteNode(imageNamed: "background")
         
-        
-        self.bg1.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat((kBgImageHeight)/Double(2.0)))
-        self.bg2.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat(kBgImageHeight*0.5+kBgImageHeight))
+        self.background1.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat((kBgImageHeight)/Double(2.0)))
+        self.background2.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat(kBgImageHeight*0.5+kBgImageHeight))
         
         
         

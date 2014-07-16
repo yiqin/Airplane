@@ -17,8 +17,6 @@
 		8DB369301972E180001DAF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3692E1972E180001DAF73 /* Main.storyboard */; };
 		8DB369321972E180001DAF73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369311972E180001DAF73 /* Images.xcassets */; };
 		8DB3693E1972E181001DAF73 /* AirplaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3693D1972E181001DAF73 /* AirplaneTests.swift */; };
-		8DB369621972E497001DAF73 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369491972E497001DAF73 /* bg.png */; };
-		8DB369631972E497001DAF73 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3694A1972E497001DAF73 /* bg@2x.png */; };
 		8DB369641972E497001DAF73 /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3694B1972E497001DAF73 /* bullet.png */; };
 		8DB369651972E497001DAF73 /* bullet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3694C1972E497001DAF73 /* bullet@2x.png */; };
 		8DB369661972E497001DAF73 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3694D1972E497001DAF73 /* cloud.png */; };
@@ -41,6 +39,8 @@
 		8DB369771972E497001DAF73 /* propeller2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB3695E1972E497001DAF73 /* propeller2@2x.png */; };
 		8DB369781972E497001DAF73 /* bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369601972E497001DAF73 /* bomb.png */; };
 		8DB369791972E497001DAF73 /* bombParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8DB369611972E497001DAF73 /* bombParticle.sks */; };
+		8DCB6A9C19760E95004C3043 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCB6A9A19760E95004C3043 /* background.png */; };
+		8DCB6A9D19760E95004C3043 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCB6A9B19760E95004C3043 /* background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +68,6 @@
 		8DB369371972E180001DAF73 /* AirplaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirplaneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB3693C1972E181001DAF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DB3693D1972E181001DAF73 /* AirplaneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneTests.swift; sourceTree = "<group>"; };
-		8DB369491972E497001DAF73 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
-		8DB3694A1972E497001DAF73 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
 		8DB3694B1972E497001DAF73 /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		8DB3694C1972E497001DAF73 /* bullet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bullet@2x.png"; sourceTree = "<group>"; };
 		8DB3694D1972E497001DAF73 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
@@ -92,6 +90,8 @@
 		8DB3695E1972E497001DAF73 /* propeller2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "propeller2@2x.png"; sourceTree = "<group>"; };
 		8DB369601972E497001DAF73 /* bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bomb.png; sourceTree = "<group>"; };
 		8DB369611972E497001DAF73 /* bombParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bombParticle.sks; sourceTree = "<group>"; };
+		8DCB6A9A19760E95004C3043 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		8DCB6A9B19760E95004C3043 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +185,8 @@
 		8DB369481972E497001DAF73 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				8DB369491972E497001DAF73 /* bg.png */,
-				8DB3694A1972E497001DAF73 /* bg@2x.png */,
+				8DCB6A9A19760E95004C3043 /* background.png */,
+				8DCB6A9B19760E95004C3043 /* background@2x.png */,
 				8DB3694B1972E497001DAF73 /* bullet.png */,
 				8DB3694C1972E497001DAF73 /* bullet@2x.png */,
 				8DB3694D1972E497001DAF73 /* cloud.png */,
@@ -306,6 +306,8 @@
 				8DB3696A1972E497001DAF73 /* enemyplane2.png in Resources */,
 				8DB369651972E497001DAF73 /* bullet@2x.png in Resources */,
 				8DB369301972E180001DAF73 /* Main.storyboard in Resources */,
+				8DCB6A9D19760E95004C3043 /* background@2x.png in Resources */,
+				8DCB6A9C19760E95004C3043 /* background.png in Resources */,
 				8DB369771972E497001DAF73 /* propeller2@2x.png in Resources */,
 				8DB369781972E497001DAF73 /* bomb.png in Resources */,
 				8DB369741972E497001DAF73 /* propeller1.png in Resources */,
@@ -321,8 +323,6 @@
 				8DB369711972E497001DAF73 /* myplane@2x.png in Resources */,
 				8DB369701972E497001DAF73 /* myplane.png in Resources */,
 				8DB369721972E497001DAF73 /* pause.png in Resources */,
-				8DB369621972E497001DAF73 /* bg.png in Resources */,
-				8DB369631972E497001DAF73 /* bg@2x.png in Resources */,
 				8DB3696D1972E497001DAF73 /* enemypropeller1@2x.png in Resources */,
 				8DB369691972E497001DAF73 /* enemyplane1@2x.png in Resources */,
 				8DB369681972E497001DAF73 /* enemyplane1.png in Resources */,
