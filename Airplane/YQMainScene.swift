@@ -77,9 +77,6 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         myPropeller.runAction(rotateForever)
         myPropeller.position = CGPointMake(-1, myPlane.size.height/2-2)
         
-        
-        // not sure whether myPlaneNode init or not
-        // yes
         self.myPlaneNode.addChild(myPlane)
         self.myPlaneNode.addChild(myPropeller)
         self.myPlaneNode.position = CGPointMake(CGRectGetMidX(self.frame), 100)
@@ -91,7 +88,6 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         self.myPlaneNode.physicsBody.collisionBitMask = UInt32(self.kEnemyPlaneMask)
         self.addChild(self.myPlaneNode)
         
-        // same problem
         self.scoreLabel.fontName = "AmericanTypewriter-Bold"
         self.scoreLabel.fontSize = 20
         self.scoreLabel.fontColor = UIColor.blackColor()
@@ -103,9 +99,7 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         
         self.runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.waitForDuration(0.3),SKAction.runBlock(self.shoot)])), withKey: "shootAction")
         
-        // No selector anymore
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0/100.0, target: self, selector: Selector("mainloop"), userInfo: nil, repeats: true)
-        
     }
     
     func mainloop() {
@@ -118,5 +112,22 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    override func didMoveToView(view: SKView!) {
+        let panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
+        self.view.addGestureRecognizer(panRecognizer)
+    }
+    
+    func handlePanGesture(recognier: UIPanGestureRecognizer) {
+        let translation = recognier.translationInView(self.view)
+        var x = self.myPlaneNode.position.x + translation.x
+        var y = self.myPlaneNode.position.y - translation.y
+        
+        x = fminf(fmaxf(x, self.myPlaneNode.frame.size.width/2), self.frame.size.width-self.myPlaneNode.frame.size.width/2)
+        y = fminf(fmaxf(y, self.myPlaneNode.frame.size.width/2), self.frame.size.height-self.myPlaneNode.frame.size.width/2)
+        
+        self.myPlaneNode.position = CGPointMake(x, y)
+        
+        recognier.setTranslation(CGPointMake(0.0, 0.0), inView: self.view)
+    }
     
 }
