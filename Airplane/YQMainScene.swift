@@ -21,9 +21,9 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
     let kEnemySpeedMin = 3
     let kEnemySpeedMax = 5
     
-    let kMyPlaneMask = 1
-    let kEnemyPlaneMask = 2
-    let kBulletMask = 3
+    let kMyPlaneMask = UInt32(1)
+    let kEnemyPlaneMask = UInt32(2)
+    let kBulletMask = UInt32(3)
     
     
     var timer = NSTimer()
@@ -35,7 +35,7 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
     var pauseButton = UIButton()
     
     var bullet = SKSpriteNode()
-    var bulletSpeed = Float()
+    var bulletSpeed = Double()
     
     var scoreLabel = SKLabelNode()
     var score = Int()
@@ -83,9 +83,9 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         self.myPlaneNode.zPosition = 10
         self.myPlaneNode.physicsBody = SKPhysicsBody(rectangleOfSize: myPlane.size)
         self.myPlaneNode.physicsBody.allowsRotation = false
-        self.myPlaneNode.physicsBody.categoryBitMask = UInt32(self.kMyPlaneMask)
-        self.myPlaneNode.physicsBody.contactTestBitMask = UInt32(self.kEnemyPlaneMask)
-        self.myPlaneNode.physicsBody.collisionBitMask = UInt32(self.kEnemyPlaneMask)
+        self.myPlaneNode.physicsBody.categoryBitMask = self.kMyPlaneMask
+        self.myPlaneNode.physicsBody.contactTestBitMask = self.kEnemyPlaneMask
+        self.myPlaneNode.physicsBody.collisionBitMask = self.kEnemyPlaneMask
         self.addChild(self.myPlaneNode)
         
         self.scoreLabel.fontName = "AmericanTypewriter-Bold"
@@ -103,15 +103,77 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func mainloop() {
+        self.playTime++;
+        
+        self.backgroundLoop()
+        
+        if 0 == arc4random()%500 {
+            self.newRandomCloud()
+        }
         
         
     }
     
+    // Background
+    func backgroundLoop() {
+        
+    }
+    
+    // Generate random cloud
+    func newRandomCloud() {
+        let cloud = SKSpriteNode(imageNamed: "cloud")
+        
+        // This is the reason why I feel Swift sucks........................
+        // let x = arc4random()%(Int)(self.frame.size.width+cloud.frame.size.width)- cloud.frame.size.width
+        let x =  CGFloat (Int(arc4random())%Int(self.frame.size.width+cloud.frame.size.width))
+        cloud.position = CGPointMake(x, self.frame.size.height+cloud.frame.size.height/2)
+        
+        let speed = Double (Int(arc4random())%Int(self.kCloudSpeedMax-self.kCloudSpeedMin)+self.kCloudSpeedMin)
+        
+        var cloudAction = SKAction.moveToY(0.0-cloud.frame.size.height, duration: 1)
+        
+        /*
+        cloud.runAction(cloudAction, completion: {
+            cloud.removeFromParent()
+            
+        })
+        */
+        
+        let remove = SKAction.removeFromParent()
+        
+        cloud.runAction(SKAction.sequence([cloudAction, remove]))
+        
+        // cloud.runAction(cloudAction,
+            
+        // cloud.zPosition = CGFloat(arc4random()%20 + 1)
+        cloud.zPosition = 2
+        
+        
+        self.addChild(cloud)
+    }
+    
+    // Shoot
     func shoot() {
+        // Why self.bullet ??????
+        self.bullet = SKSpriteNode(imageNamed: "bullet")
+        self.bullet.position = CGPointMake(self.myPlaneNode.position.x, self.myPlaneNode.position.y+self.bullet.size.height+30)
+        self.bullet.zPosition = 1
+        self.bullet.setScale(0.8)
+        self.bullet.physicsBody = SKPhysicsBody(rectangleOfSize: self.bullet.size)
+        self.bullet.physicsBody.allowsRotation = false
+        self.bullet.physicsBody.categoryBitMask = self.kBulletMask
+        self.bullet.physicsBody.contactTestBitMask = self.kEnemyPlaneMask
+        self.bullet.physicsBody.collisionBitMask = self.kEnemyPlaneMask
+
         
+        let action = SKAction.moveToY(self.frame.size.height + self.bullet.size.height, duration: self.bulletSpeed)
+        let remove = SKAction.removeFromParent()
+        bullet.runAction(SKAction.sequence([action, remove]))
         
+        self.addChild(bullet)
     }
     
+    // Control the airplane
     override func didMoveToView(view: SKView!) {
         let panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
         self.view.addGestureRecognizer(panRecognizer)
@@ -131,3 +193,35 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
