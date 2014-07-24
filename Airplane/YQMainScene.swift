@@ -45,28 +45,28 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
     
     init(size: CGSize) {
         super.init(size: size)
-        self.startGame()
+        startGame()
     }
     
     func startGame() {
-        self.removeAllActions()
-        self.removeAllChildren()
+        removeAllActions()
+        removeAllChildren()
         
-        self.physicsWorld.gravity = CGVectorMake(0, 0)
-        self.physicsWorld.contactDelegate = self;
+        physicsWorld.gravity = CGVectorMake(0, 0)
+        physicsWorld.contactDelegate = self;
         
-        self.score = 0
-        self.playTime = 0
-        self.bulletSpeed = 0.5
+        score = 0
+        playTime = 0
+        bulletSpeed = 0.5
         
-        self.background1 = SKSpriteNode(imageNamed:"background")
-        self.background2 = SKSpriteNode(imageNamed: "background")
+        background1 = SKSpriteNode(imageNamed:"background")
+        background2 = SKSpriteNode(imageNamed: "background")
         
-        self.background1.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat((kBgImageHeight)/Double(2.0)))
-        self.background2.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat(kBgImageHeight*0.5+kBgImageHeight))
+        background1.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat((kBgImageHeight)/Double(2.0)))
+        background2.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat(kBgImageHeight*0.5+kBgImageHeight))
         
-        self.addChild(self.background1)
-        self.addChild(self.background2)
+        addChild(background1)
+        addChild(background2)
         
         let myPlane = SKSpriteNode(imageNamed: "myplane")
         let myPropeller = SKSpriteNode(imageNamed: "propeller1")
@@ -77,38 +77,38 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         myPropeller.runAction(rotateForever)
         myPropeller.position = CGPointMake(-1, myPlane.size.height/2-2)
         
-        self.myPlaneNode.addChild(myPlane)
-        self.myPlaneNode.addChild(myPropeller)
-        self.myPlaneNode.position = CGPointMake(CGRectGetMidX(self.frame), 100)
-        self.myPlaneNode.zPosition = 10
-        self.myPlaneNode.physicsBody = SKPhysicsBody(rectangleOfSize: myPlane.size)
-        self.myPlaneNode.physicsBody.allowsRotation = false
-        self.myPlaneNode.physicsBody.categoryBitMask = self.kMyPlaneMask
-        self.myPlaneNode.physicsBody.contactTestBitMask = self.kEnemyPlaneMask
-        self.myPlaneNode.physicsBody.collisionBitMask = self.kEnemyPlaneMask
-        self.addChild(self.myPlaneNode)
+        myPlaneNode.addChild(myPlane)
+        myPlaneNode.addChild(myPropeller)
+        myPlaneNode.position = CGPointMake(CGRectGetMidX(frame), 100)
+        myPlaneNode.zPosition = 10
+        myPlaneNode.physicsBody = SKPhysicsBody(rectangleOfSize: myPlane.size)
+        myPlaneNode.physicsBody.allowsRotation = false
+        myPlaneNode.physicsBody.categoryBitMask = kMyPlaneMask
+        myPlaneNode.physicsBody.contactTestBitMask = kEnemyPlaneMask
+        myPlaneNode.physicsBody.collisionBitMask = kEnemyPlaneMask
+        addChild(myPlaneNode)
         
-        self.scoreLabel.fontName = "AmericanTypewriter-Bold"
-        self.scoreLabel.fontSize = 20
-        self.scoreLabel.fontColor = UIColor.blackColor()
-        self.addChild(self.scoreLabel)
+        scoreLabel.fontName = "AmericanTypewriter-Bold"
+        scoreLabel.fontSize = 20
+        scoreLabel.fontColor = UIColor.blackColor()
+        addChild(scoreLabel)
         
-        self.playTimeLabel.fontName = "AmericanTypewriter-Bold"
-        self.playTimeLabel.fontSize = 20
-        self.playTimeLabel.fontColor = UIColor.blackColor()
+        playTimeLabel.fontName = "AmericanTypewriter-Bold"
+        playTimeLabel.fontSize = 20
+        playTimeLabel.fontColor = UIColor.blackColor()
         
-        self.runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.waitForDuration(0.3),SKAction.runBlock(self.shoot)])), withKey: "shootAction")
+        runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.waitForDuration(0.3),SKAction.runBlock(self.shoot)])), withKey: "shootAction")
         
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0/100.0, target: self, selector: Selector("mainloop"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0/100.0, target: self, selector: Selector("mainloop"), userInfo: nil, repeats: true)
     }
     
     func mainloop() {
-        self.playTime++;
+        playTime++;
         
-        self.backgroundLoop()
+        backgroundLoop()
         
         if 0 == arc4random()%500 {
-            self.newRandomCloud()
+            // newRandomCloud()
         }
         
         
@@ -125,10 +125,10 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         
         // This is the reason why I feel Swift sucks........................
         // let x = arc4random()%(Int)(self.frame.size.width+cloud.frame.size.width)- cloud.frame.size.width
-        let x =  CGFloat (Int(arc4random())%Int(self.frame.size.width+cloud.frame.size.width))
-        cloud.position = CGPointMake(x, self.frame.size.height+cloud.frame.size.height/2)
+        let x =  CGFloat (Int(arc4random())%Int(frame.size.width+cloud.frame.size.width))
+        cloud.position = CGPointMake(x, frame.size.height+cloud.frame.size.height/2)
         
-        let speed = Double (Int(arc4random())%Int(self.kCloudSpeedMax-self.kCloudSpeedMin)+self.kCloudSpeedMin)
+        let speed = Double (Int(arc4random())%Int(kCloudSpeedMax-kCloudSpeedMin)+kCloudSpeedMin)
         
         var cloudAction = SKAction.moveToY(0.0-cloud.frame.size.height, duration: 1)
         
@@ -155,39 +155,39 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
     // Shoot
     func shoot() {
         // Why self.bullet ??????
-        self.bullet = SKSpriteNode(imageNamed: "bullet")
-        self.bullet.position = CGPointMake(self.myPlaneNode.position.x, self.myPlaneNode.position.y+self.bullet.size.height+30)
-        self.bullet.zPosition = 1
-        self.bullet.setScale(0.8)
-        self.bullet.physicsBody = SKPhysicsBody(rectangleOfSize: self.bullet.size)
-        self.bullet.physicsBody.allowsRotation = false
-        self.bullet.physicsBody.categoryBitMask = self.kBulletMask
-        self.bullet.physicsBody.contactTestBitMask = self.kEnemyPlaneMask
-        self.bullet.physicsBody.collisionBitMask = self.kEnemyPlaneMask
+        bullet = SKSpriteNode(imageNamed: "bullet")
+        bullet.position = CGPointMake(myPlaneNode.position.x, myPlaneNode.position.y+bullet.size.height+30)
+        bullet.zPosition = 1
+        bullet.setScale(0.8)
+        bullet.physicsBody = SKPhysicsBody(rectangleOfSize: bullet.size)
+        bullet.physicsBody.allowsRotation = false
+        bullet.physicsBody.categoryBitMask = kBulletMask
+        bullet.physicsBody.contactTestBitMask = kEnemyPlaneMask
+        bullet.physicsBody.collisionBitMask = kEnemyPlaneMask
 
         
-        let action = SKAction.moveToY(self.frame.size.height + self.bullet.size.height, duration: self.bulletSpeed)
+        let action = SKAction.moveToY(self.frame.size.height + bullet.size.height, duration: bulletSpeed)
         let remove = SKAction.removeFromParent()
         bullet.runAction(SKAction.sequence([action, remove]))
         
-        self.addChild(bullet)
+        addChild(bullet)
     }
     
     // Control the airplane
     override func didMoveToView(view: SKView!) {
         let panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
-        self.view.addGestureRecognizer(panRecognizer)
+        view.addGestureRecognizer(panRecognizer)
     }
     
     func handlePanGesture(recognier: UIPanGestureRecognizer) {
         let translation = recognier.translationInView(self.view)
-        var x = self.myPlaneNode.position.x + translation.x
-        var y = self.myPlaneNode.position.y - translation.y
+        var x = myPlaneNode.position.x + translation.x
+        var y = myPlaneNode.position.y - translation.y
         
-        x = fminf(fmaxf(x, self.myPlaneNode.frame.size.width/2), self.frame.size.width-self.myPlaneNode.frame.size.width/2)
-        y = fminf(fmaxf(y, self.myPlaneNode.frame.size.width/2), self.frame.size.height-self.myPlaneNode.frame.size.width/2)
+        x = fminf(fmaxf(x, myPlaneNode.frame.size.width/2), frame.size.width-myPlaneNode.frame.size.width/2)
+        y = fminf(fmaxf(y, myPlaneNode.frame.size.width/2), frame.size.height-myPlaneNode.frame.size.width/2)
         
-        self.myPlaneNode.position = CGPointMake(x, y)
+        myPlaneNode.position = CGPointMake(x, y)
         
         recognier.setTranslation(CGPointMake(0.0, 0.0), inView: self.view)
     }
