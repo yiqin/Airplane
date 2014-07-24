@@ -17,8 +17,8 @@ class YQGameData: NSObject {
     init() {
     
         
-        self.score = 0
-        self.time = 0
+        score = 0
+        time = 0
         
         super.init()
     }
