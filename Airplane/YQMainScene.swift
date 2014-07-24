@@ -165,8 +165,10 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         bullet.physicsBody.contactTestBitMask = kEnemyPlaneMask
         bullet.physicsBody.collisionBitMask = kEnemyPlaneMask
 
+        let temp = frame.size.height + bullet.size.height;
+
         
-        let action = SKAction.moveToY(self.frame.size.height + bullet.size.height, duration: bulletSpeed)
+        let action = SKAction.moveToY(frame.size.height + bullet.size.height, duration: bulletSpeed)
         let remove = SKAction.removeFromParent()
         bullet.runAction(SKAction.sequence([action, remove]))
         
