@@ -60,7 +60,7 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         bulletSpeed = 0.5
         
         background1 = SKSpriteNode(imageNamed:"background")
-        background2 = SKSpriteNode(imageNamed: "background")
+        background2 = SKSpriteNode(imageNamed:"background")
         
         background1.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat((kBgImageHeight)/Double(2.0)))
         background2.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat(kBgImageHeight*0.5+kBgImageHeight))
@@ -108,7 +108,9 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         backgroundLoop()
         
         if 0 == arc4random()%500 {
-            // newRandomCloud()
+            
+            
+            newRandomCloud()
         }
         
         
