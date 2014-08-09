@@ -11,8 +11,8 @@ import SpriteKit
 
 class YQMainScene: SKScene, SKPhysicsContactDelegate {
     
-    let kBgImageHeight = 600.0
-    let kBgSpeed = 10
+    let kBackgroundImageHeight = 600.0
+    let kBackgroundSpeed = 10
     let kScorePerPlane = 100
     
     let kCloudSpeedMin = 5
@@ -62,8 +62,8 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         background1 = SKSpriteNode(imageNamed:"background")
         background2 = SKSpriteNode(imageNamed:"background")
         
-        background1.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat((kBgImageHeight)/Double(2.0)))
-        background2.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat(kBgImageHeight*0.5+kBgImageHeight))
+        background1.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat((kBackgroundImageHeight)/Double(2.0)))
+        background2.position = CGPointMake(CGRectGetMidX(self.frame), CGFloat(kBackgroundImageHeight*0.5+kBackgroundImageHeight))
         
         addChild(background1)
         addChild(background2)
@@ -107,56 +107,39 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         
         backgroundLoop()
         
-        if 0 == arc4random()%500 {
-            
-            
+        if 0 == arc4random()%100 {
             newRandomCloud()
         }
         
-        
     }
     
-    // Background
     func backgroundLoop() {
         
     }
     
-    // Generate random cloud
     func newRandomCloud() {
         let cloud = SKSpriteNode(imageNamed: "cloud")
         
-        // This is the reason why I feel Swift sucks........................
-        // let x = arc4random()%(Int)(self.frame.size.width+cloud.frame.size.width)- cloud.frame.size.width
-        let x =  CGFloat (Int(arc4random())%Int(frame.size.width+cloud.frame.size.width))
-        cloud.position = CGPointMake(x, frame.size.height+cloud.frame.size.height/2)
+        // This line is wrong.
+        let width = UInt32( frame.size.width + cloud.frame.size.width )
+        let x =  arc4random() % width + width
         
-        let speed = Double (Int(arc4random())%Int(kCloudSpeedMax-kCloudSpeedMin)+kCloudSpeedMin)
+        cloud.position = CGPointMake( 10 , frame.size.height+cloud.frame.size.height/2)
         
         var cloudAction = SKAction.moveToY(0.0-cloud.frame.size.height, duration: 1)
         
-        /*
-        cloud.runAction(cloudAction, completion: {
-            cloud.removeFromParent()
-            
-        })
-        */
+
         
         let remove = SKAction.removeFromParent()
-        
         cloud.runAction(SKAction.sequence([cloudAction, remove]))
-        
-        // cloud.runAction(cloudAction,
-            
-        // cloud.zPosition = CGFloat(arc4random()%20 + 1)
-        cloud.zPosition = 2
+        cloud.zPosition = CGFloat(arc4random()%20 + 1)
+        // cloud.zPosition = 2
         
         
-        self.addChild(cloud)
+        addChild(cloud)
     }
     
-    // Shoot
     func shoot() {
-        // Why self.bullet ??????
         bullet = SKSpriteNode(imageNamed: "bullet")
         bullet.position = CGPointMake(myPlaneNode.position.x, myPlaneNode.position.y+bullet.size.height+30)
         bullet.zPosition = 1
@@ -166,8 +149,9 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         bullet.physicsBody.categoryBitMask = kBulletMask
         bullet.physicsBody.contactTestBitMask = kEnemyPlaneMask
         bullet.physicsBody.collisionBitMask = kEnemyPlaneMask
-
         
+        
+        // Duration is a constant variable
         let action = SKAction.moveToY(self.frame.size.height + bullet.size.height, duration: bulletSpeed)
         let remove = SKAction.removeFromParent()
         bullet.runAction(SKAction.sequence([action, remove]))
@@ -175,7 +159,6 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         addChild(bullet)
     }
     
-    // Control the airplane
     override func didMoveToView(view: SKView!) {
         let panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
         view.addGestureRecognizer(panRecognizer)
