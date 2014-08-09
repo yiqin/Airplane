@@ -3,4 +3,4 @@ Airplane
 
 Airplane in Swift
 
-![Alt text](/ScreenShots/ScreenShot_1.png?raw=true "Optional Title")
+![Alt text](/ScreenShots/ScreenShot_1.PNG?raw=true "Optional Title")
