@@ -145,7 +145,7 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         
         // cloud.runAction(cloudAction,
             
-        // cloud.zPosition = CGFloat(arc4random()%20 + 1)
+        cloud.zPosition = CGFloat(arc4random()%20 + 1)
         cloud.zPosition = 2
         
         
@@ -154,7 +154,6 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
     
     // Shoot
     func shoot() {
-        // Why self.bullet ??????
         bullet = SKSpriteNode(imageNamed: "bullet")
         bullet.position = CGPointMake(myPlaneNode.position.x, myPlaneNode.position.y+bullet.size.height+30)
         bullet.zPosition = 1
@@ -185,6 +184,8 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         let translation = recognier.translationInView(self.view)
         var x = myPlaneNode.position.x + translation.x
         var y = myPlaneNode.position.y - translation.y
+        
+        
         
         x = fminf(fmaxf(x, myPlaneNode.frame.size.width/2), frame.size.width-myPlaneNode.frame.size.width/2)
         y = fminf(fmaxf(y, myPlaneNode.frame.size.width/2), frame.size.height-myPlaneNode.frame.size.width/2)
