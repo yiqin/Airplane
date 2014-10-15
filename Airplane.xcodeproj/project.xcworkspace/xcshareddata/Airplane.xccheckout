@@ -10,29 +10,29 @@
 	<string>Airplane</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>DF619446-190D-487B-A2BD-D82D0BE7E1F8</key>
+		<key>0CB662163BC6955EFEF313C0A7BECDF9BB51400F</key>
 		<string>https://github.com/yiqin/Airplane.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Airplane.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DF619446-190D-487B-A2BD-D82D0BE7E1F8</key>
+		<key>0CB662163BC6955EFEF313C0A7BECDF9BB51400F</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/yiqin/Airplane.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DF619446-190D-487B-A2BD-D82D0BE7E1F8</string>
+	<string>0CB662163BC6955EFEF313C0A7BECDF9BB51400F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DF619446-190D-487B-A2BD-D82D0BE7E1F8</string>
+			<string>0CB662163BC6955EFEF313C0A7BECDF9BB51400F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Airplane</string>
 		</dict>

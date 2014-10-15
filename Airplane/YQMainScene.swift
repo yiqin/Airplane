@@ -43,9 +43,13 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
     var playTime = Int()
     
     
-    init(size: CGSize) {
+    override init(size: CGSize) {
         super.init(size: size)
         startGame()
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func startGame() {
@@ -82,10 +86,12 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         myPlaneNode.position = CGPointMake(CGRectGetMidX(frame), 100)
         myPlaneNode.zPosition = 10
         myPlaneNode.physicsBody = SKPhysicsBody(rectangleOfSize: myPlane.size)
-        myPlaneNode.physicsBody.allowsRotation = false
-        myPlaneNode.physicsBody.categoryBitMask = kMyPlaneMask
-        myPlaneNode.physicsBody.contactTestBitMask = kEnemyPlaneMask
-        myPlaneNode.physicsBody.collisionBitMask = kEnemyPlaneMask
+        
+        // Why add "?" here
+        myPlaneNode.physicsBody?.allowsRotation = false
+        myPlaneNode.physicsBody?.categoryBitMask = kMyPlaneMask
+        myPlaneNode.physicsBody?.contactTestBitMask = kEnemyPlaneMask
+        myPlaneNode.physicsBody?.collisionBitMask = kEnemyPlaneMask
         addChild(myPlaneNode)
         
         scoreLabel.fontName = "AmericanTypewriter-Bold"
@@ -145,11 +151,10 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         bullet.zPosition = 1
         bullet.setScale(0.8)
         bullet.physicsBody = SKPhysicsBody(rectangleOfSize: bullet.size)
-        bullet.physicsBody.allowsRotation = false
-        bullet.physicsBody.categoryBitMask = kBulletMask
-        bullet.physicsBody.contactTestBitMask = kEnemyPlaneMask
-        bullet.physicsBody.collisionBitMask = kEnemyPlaneMask
-        
+        bullet.physicsBody?.allowsRotation = false
+        bullet.physicsBody?.categoryBitMask = kBulletMask
+        bullet.physicsBody?.contactTestBitMask = kEnemyPlaneMask
+        bullet.physicsBody?.collisionBitMask = kEnemyPlaneMask
         
         // Duration is a constant variable
         let action = SKAction.moveToY(self.frame.size.height + bullet.size.height, duration: bulletSpeed)
@@ -159,18 +164,19 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         addChild(bullet)
     }
     
-    override func didMoveToView(view: SKView!) {
+    override func didMoveToView(view: SKView) {
         let panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
         view.addGestureRecognizer(panRecognizer)
     }
     
     func handlePanGesture(recognier: UIPanGestureRecognizer) {
-        let translation = recognier.translationInView(self.view)
+        let translation = recognier.translationInView(self.view!)
         var x = myPlaneNode.position.x + translation.x
         var y = myPlaneNode.position.y - translation.y
         
-        x = fminf(fmaxf(x, myPlaneNode.frame.size.width/2), frame.size.width-myPlaneNode.frame.size.width/2)
-        y = fminf(fmaxf(y, myPlaneNode.frame.size.width/2), frame.size.height-myPlaneNode.frame.size.width/2)
+        // I forget what this is for....
+        // x = fminf(fmaxf(x, myPlaneNode.frame.size.width*0.5), frame.size.width-myPlaneNode.frame.size.width/2)
+        // y = fminf(fmaxf(y, myPlaneNode.frame.size.width/2), frame.size.height-myPlaneNode.frame.size.width/2)
         
         myPlaneNode.position = CGPointMake(x, y)
         
