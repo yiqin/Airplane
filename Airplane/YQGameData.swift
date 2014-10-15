@@ -15,7 +15,6 @@ class YQGameData: NSObject {
     var time: Int
     
     override init() {
-    
         
         score = 0
         time = 0

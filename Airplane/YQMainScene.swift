@@ -113,10 +113,9 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         
         backgroundLoop()
         
-        if 0 == arc4random()%100 {
+        if 0 == arc4random()%300 {
             newRandomCloud()
         }
-        
     }
     
     func backgroundLoop() {
@@ -127,20 +126,25 @@ class YQMainScene: SKScene, SKPhysicsContactDelegate {
         let cloud = SKSpriteNode(imageNamed: "cloud")
         
         // This line is wrong.
-        let width = UInt32( frame.size.width + cloud.frame.size.width )
-        let x =  arc4random() % width + width
+        let width = frame.size.width
+        print("Width: ")
+        println(width)
         
-        cloud.position = CGPointMake( 10 , frame.size.height+cloud.frame.size.height/2)
         
-        var cloudAction = SKAction.moveToY(0.0-cloud.frame.size.height, duration: 1)
+        let x =  CGFloat(arc4random()) % width
+        print("Random position: ")
+        println(x)
         
-
+        
+        cloud.position = CGPointMake( x, frame.size.height+cloud.frame.size.height/2)
+        
+        var cloudAction = SKAction.moveToY(0.0-cloud.frame.size.height, duration: 2)
+        
         
         let remove = SKAction.removeFromParent()
         cloud.runAction(SKAction.sequence([cloudAction, remove]))
         cloud.zPosition = CGFloat(arc4random()%20 + 1)
         // cloud.zPosition = 2
-        
         
         addChild(cloud)
     }
